@@ -1,4 +1,4 @@
-Block Observing 2.1
+Block Observing 2.2
 =============
 
 
@@ -27,7 +27,13 @@ Integration
 3. Add `libBlockObserving.a` to _**Link Binary With Libraries**_ in _Build Phases_.
 4. Add **`-ObjC` and `-all_load`** as _Other Linker Flags_ in _Build Settings_.
 5. Make sure you have _Header Search Paths_ in _Build Settings_ set up (e.g. `Libraries/**`).
-6. Import **`MTKObserving.h`** to your files (usually in `Prefix.pch`).
+6. Import `MTKObserving.h` to your files (usually in `Prefix.pch`).
+
+
+Integration using [CocoaPods](http://cocoapods.org "CocoaPods")
+---------------------------
+1. Add `pod 'Block-KVO'` to your *Podfile*.
+2. Import `<Block-KVO/MTKObserving.h>` to your files (usually in `Prefix.pch`).
 
 
 Features
@@ -81,7 +87,7 @@ There are methods that take an array of key-paths and one block (or selector).
 
 
 ### One-way binding (mapping) ###
-Map property to another property. Once the source key-path changes, destination si updated with the new value. Transform the value as you wish.
+Map property to another property. Once the source key-path changes, destination is updated with the new value. Transform the value as you wish.
 
 ```
 [self map:@keypath(self.profile.isLogged) to:@keypath(self.isLoggedLabel.text) transform:
@@ -107,6 +113,6 @@ Improved observation of notifications using blocks. `NSNotificationCenter` provi
 
 ---
 
-_MIT License, Copyright (c) 2012-2013 Martin Kiss_
+_MIT License, Copyright (c) 2012—2013 Martin Kiss_
 
 `THE SOFTWARE IS PROVIDED "AS IS", and so on …`
